@@ -4,19 +4,19 @@ import getRandomNumInRange from '../randomNumber.js';
 const description = 'Find the greatest common divisor of given numbers.';
 
 const calculateGcd = (number1, number2) => {
-  let a = number1;
-  let b = number2;
-  if (a > b) {
-    const num = a;
-    a = b;
-    b = num;
+  let firstNum = number1;
+  let secondNum = number2;
+  if (firstNum > secondNum) {
+    const num = firstNum;
+    firstNum = secondNum;
+    secondNum = num;
   }
-  while (b !== 0) {
-    const remainder = (a % b);
-    a = b;
-    b = remainder;
+  while (secondNum !== 0) {
+    const remainder = (firstNum % secondNum);
+    firstNum = secondNum;
+    secondNum = remainder;
   }
-  return a;
+  return firstNum;
 };
 
 const generateRound = () => {
